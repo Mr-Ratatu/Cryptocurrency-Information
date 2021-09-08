@@ -1,0 +1,17 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "Millions of crypts"
+include ':app'
+include ':base'
+include ':core:data'
+include ':core:data-local'
+include ':core:data-network'
+include ':feature-currency'
+include ':feature-converter'
+include ':feature-favorite'

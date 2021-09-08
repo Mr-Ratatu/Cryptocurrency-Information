@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Indent-->
+    <dimen name="indent_8">8dp</dimen>
+    <dimen name="indent_12">12dp</dimen>
+    <dimen name="indent_16">16dp</dimen>
+    <dimen name="indent_18">18dp</dimen>
+    <dimen name="indent_24">24dp</dimen>
+    <dimen name="indent_32">32dp</dimen>
+    <dimen name="indent_48">48dp</dimen>
+
+    <!--Icon size-->
+    <dimen name="icon_18">18dp</dimen>
+    <dimen name="icon_24">24dp</dimen>
+    <dimen name="icon_32">32dp</dimen>
+    <dimen name="icon_50">50dp</dimen>
+
+    <!--Text size-->
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="text_22">22sp</dimen>
+    <dimen name="text_24">24sp</dimen>
+    <dimen name="text_32">32sp</dimen>
+</resources>

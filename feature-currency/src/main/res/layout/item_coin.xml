@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/indent_16">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_coin_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/red_hat_display_medium"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/item_coin_abbreviation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/coin_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_coin_abbreviation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/red_hat_display_regular"
+            android:textColor="@color/gray"
+            app:layout_constraintStart_toStartOf="@+id/item_coin_name"
+            app:layout_constraintTop_toBottomOf="@+id/item_coin_name"
+            app:textAllCaps="true"
+            tools:text="@sample/coin_symbol" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_coin_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/red_hat_display_medium"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/item_coin_percent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@sample/coin_price" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_coin_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/red_hat_display_medium"
+            android:textColor="@color/negative"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_coin_price"
+            tools:text="4.56968%" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="@dimen/indent_8"
+            app:layout_constraintBottom_toBottomOf="@+id/item_coin_percent"
+            app:layout_constraintEnd_toStartOf="@+id/item_coin_percent"
+            app:layout_constraintTop_toTopOf="@+id/item_coin_percent"
+            tools:src="@drawable/ic_arrow_negative" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

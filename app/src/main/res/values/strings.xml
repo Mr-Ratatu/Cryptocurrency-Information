@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Millions of crypts</string>
+
+    <string name="currency">Currency</string>
+    <string name="converter">Converter</string>
+    <string name="favorite">Favorite</string>
+</resources>
