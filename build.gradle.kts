@@ -9,6 +9,7 @@ buildscript {
         classpath(ClassPaths.kotlinGradlePlugin)
         classpath(ClassPaths.daggerHiltGradlePlugin)
         classpath(ClassPaths.navigationSafeArgs)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20")
     }
 }
 

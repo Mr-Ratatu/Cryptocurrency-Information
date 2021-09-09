@@ -26,6 +26,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        //noinspection DataBindingWithoutKapt
+        dataBinding true
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -38,6 +42,7 @@ dependencies {
     implementation project(Projects.core_data_local)
     implementation project(Projects.core_data_network)
     implementation project(Projects.feature_currency)
+    implementation project(Projects.feature_main)
 
     // Base
     implementation(Dependencies.kotlin)
@@ -45,4 +50,9 @@ dependencies {
     implementation(Dependencies.appCompat)
     implementation(Dependencies.material)
     implementation(Dependencies.constraintLayout)
+    implementation(Dependencies.lifecycleRuntime)
+
+    // Navigation
+    implementation(Dependencies.navigationUI)
+    implementation(Dependencies.navigationFragment)
 }

@@ -1,0 +1,5 @@
+<resources>
+    <string name="currency">Currency</string>
+    <string name="converter">Converter</string>
+    <string name="favorite">Favorite</string>
+</resources>

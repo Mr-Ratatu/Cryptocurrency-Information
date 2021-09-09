@@ -12,6 +12,17 @@
         <entry key="..\:/Training Projects/Millionsofcrypts/feature-currency/src/main/res/drawable/ic_arrow_positive.xml" value="0.2703125" />
         <entry key="..\:/Training Projects/Millionsofcrypts/feature-currency/src/main/res/layout/fragment_crypto_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Training Projects/Millionsofcrypts/feature-currency/src/main/res/layout/item_coin.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/ic_splash_screen.xml" value="0.371875" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.2" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.35572916666666665" />
+        <entry key="feature-converter/src/main/res/layout/fragment_converter.xml" value="0.35572916666666665" />
+        <entry key="feature-currency/src/main/res/layout-v21/fragment_crypto_list.xml" value="0.35572916666666665" />
+        <entry key="feature-currency/src/main/res/layout/fragment_crypto_list.xml" value="0.35572916666666665" />
+        <entry key="feature-favorite/src/main/res/layout/fragment_favorite.xml" value="0.35572916666666665" />
+        <entry key="feature-main/src/main/res/drawable/ic_favorite.xml" value="0.371875" />
+        <entry key="feature-main/src/main/res/layout/fragment_main.xml" value="0.35572916666666665" />
+        <entry key="feature-main/src/main/res/menu/bottom_navigation.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>

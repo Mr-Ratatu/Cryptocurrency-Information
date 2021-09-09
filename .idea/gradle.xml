@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/feature-converter" />
             <option value="$PROJECT_DIR$/feature-currency" />
             <option value="$PROJECT_DIR$/feature-favorite" />
+            <option value="$PROJECT_DIR$/feature-main" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
