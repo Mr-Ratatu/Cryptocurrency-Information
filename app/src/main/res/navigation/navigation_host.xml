@@ -13,11 +13,9 @@
         <action
             android:id="@+id/action_splashFragment_to_navigation_main"
             app:destination="@id/navigation_main"
-            app:enterAnim="@android:anim/slide_in_left"
+            app:enterAnim="@android:anim/slide_out_right"
             app:exitAnim="@android:anim/slide_out_right"
             app:launchSingleTop="true"
-            app:popEnterAnim="@android:anim/slide_in_left"
-            app:popExitAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/navigation_host" />
     </fragment>
 

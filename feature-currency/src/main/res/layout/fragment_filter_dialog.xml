@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/indent_16"
+        tools:background="@color/gray_900">
+
+        <LinearLayout
+            android:id="@+id/dialogSortList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_background"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DialogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_24"
+                android:text="@string/sort_descending" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lineSize"
+                android:alpha="0.3"
+                android:background="@color/gray" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DialogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_24"
+                android:text="@string/sort_ascending" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/lineSize"
+                android:alpha="0.3"
+                android:background="@color/gray" />
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/DialogText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/indent_24"
+                android:text="@string/alphabetically" />
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/indent_16"
+            android:background="@drawable/btn_background"
+            android:fontFamily="@font/red_hat_display_medium"
+            android:padding="@dimen/indent_18"
+            android:text="@string/back"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_18"
+            app:layout_constraintTop_toBottomOf="@+id/dialogSortList"
+            tools:layout_editor_absoluteX="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

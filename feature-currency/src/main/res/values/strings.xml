@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cryptocurrency_rates_titile">Cryptocurrency rates</string>
+    <string name="search">Search</string>
+    <string name="filtered">Filtered</string>
+    <string name="sort_descending">Sort descending</string>
+    <string name="sort_ascending">Sort ascending</string>
+    <string name="alphabetically">Alphabetically A - Z</string>
+    <string name="back">Back</string>
+</resources>

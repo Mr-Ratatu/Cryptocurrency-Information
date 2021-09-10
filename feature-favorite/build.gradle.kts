@@ -1,6 +1,9 @@
 plugins {
     id("com.android.library")
+    id("dagger.hilt.android.plugin")
+    id("androidx.navigation.safeargs")
     kotlin("android")
+    kotlin("kapt")
 }
 
 android {
@@ -22,6 +25,7 @@ dependencies {
     implementation(Dependencies.constraintLayout)
 
     implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.daggerHiltCompiler)
 
     implementation(Dependencies.navigationFragment)
     implementation(Dependencies.navigationUI)

@@ -62,7 +62,7 @@ data class CryptoMarketItem(
     val priceChange24h: Double,
 
     @SerializedName("price_change_percentage_24h")
-    val priceChangePercentage24h: Double,
+    val priceChangePercentage: Double,
 
     val symbol: String,
 

@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
+    id 'dagger.hilt.android.plugin'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -51,6 +53,14 @@ dependencies {
     implementation(Dependencies.material)
     implementation(Dependencies.constraintLayout)
     implementation(Dependencies.lifecycleRuntime)
+
+    // Retrofit
+    implementation(Dependencies.retrofit)
+    implementation(Dependencies.retrofitGson)
+    implementation(Dependencies.loggingInterceptor)
+
+    implementation(Dependencies.daggerHilt)
+    kapt(Dependencies.daggerHiltCompiler)
 
     // Navigation
     implementation(Dependencies.navigationUI)

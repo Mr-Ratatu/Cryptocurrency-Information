@@ -7,8 +7,18 @@
 
     <fragment
         android:id="@+id/cryptoListFragment"
-        android:name="com.millionquality.cryptstar.feature_currency.presentation.CryptoListFragment"
+        android:name="com.millionquality.cryptstar.currency.presentation.list.CryptoListFragment"
         android:label="CryptoListFragment"
-        tools:layout="@layout/fragment_crypto_list"/>
+        tools:layout="@layout/fragment_crypto_list" >
+        <action
+            android:id="@+id/action_cryptoList_to_filterDialog"
+            app:destination="@id/filterDialogFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/filterDialogFragment"
+        android:name="com.millionquality.cryptstar.currency.presentation.filter.FilterDialogFragment"
+        android:label="FilterDialogFragment"
+        tools:layout="@layout/fragment_filter_dialog" />
 
 </navigation>

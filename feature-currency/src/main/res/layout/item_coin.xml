@@ -5,24 +5,43 @@
 
     <data>
 
+        <variable
+            name="items"
+            type="com.millionquality.cryptstar.data.CryptoMarketItem" />
 
+        <variable
+            name="listener"
+            type="com.millionquality.cryptstar.currency.presentation.list.adapter.OnClickCryptoListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{() -> listener.itemClick(items)}"
         android:padding="@dimen/indent_16">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/item_coin_img"
+            android:layout_width="@dimen/icon_50"
+            android:layout_height="@dimen/icon_50"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImg="@{items.image}"
+            tools:src="@tools:sample/avatars" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/item_coin_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/indent_16"
             android:fontFamily="@font/red_hat_display_medium"
+            android:text="@{items.name}"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/item_coin_abbreviation"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_coin_img"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@sample/coin_name" />
 
@@ -31,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/red_hat_display_regular"
+            android:text="@{items.symbol}"
             android:textColor="@color/gray"
             app:layout_constraintStart_toStartOf="@+id/item_coin_name"
             app:layout_constraintTop_toBottomOf="@+id/item_coin_name"
@@ -42,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/red_hat_display_medium"
+            android:text='@{"$\t" + String.valueOf(items.currentPrice)}'
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/item_coin_percent"
@@ -54,11 +75,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/red_hat_display_medium"
+            android:text="@{String.valueOf(items.priceChangePercentage) + '%'}"
             android:textColor="@color/negative"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_coin_price"
+            app:setPriceColor="@{items.priceChangePercentage}"
             tools:text="4.56968%" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -68,6 +91,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/item_coin_percent"
             app:layout_constraintEnd_toStartOf="@+id/item_coin_percent"
             app:layout_constraintTop_toTopOf="@+id/item_coin_percent"
+            app:setArrowImg="@{items.priceChangePercentage}"
             tools:src="@drawable/ic_arrow_negative" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

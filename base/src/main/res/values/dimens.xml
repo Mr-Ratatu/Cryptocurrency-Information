@@ -21,4 +21,8 @@
     <dimen name="text_22">22sp</dimen>
     <dimen name="text_24">24sp</dimen>
     <dimen name="text_32">32sp</dimen>
+
+    <!--Custom size-->
+    <dimen name="actionbarSize">56dp</dimen>
+    <dimen name="lineSize">0.2dp</dimen>
 </resources>
