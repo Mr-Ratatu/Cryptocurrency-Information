@@ -9,10 +9,19 @@
         android:id="@+id/cryptoListFragment"
         android:name="com.millionquality.cryptstar.currency.presentation.list.CryptoListFragment"
         android:label="CryptoListFragment"
-        tools:layout="@layout/fragment_crypto_list" >
+        tools:layout="@layout/fragment_crypto_list">
+
         <action
             android:id="@+id/action_cryptoList_to_filterDialog"
             app:destination="@id/filterDialogFragment" />
+
+        <action
+            android:id="@+id/action_cryptoList_to_cryptoDetail"
+            app:destination="@id/cryptoDetailFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
     <dialog
@@ -20,5 +29,15 @@
         android:name="com.millionquality.cryptstar.currency.presentation.filter.FilterDialogFragment"
         android:label="FilterDialogFragment"
         tools:layout="@layout/fragment_filter_dialog" />
+
+    <fragment
+        android:id="@+id/cryptoDetailFragment"
+        android:name="com.millionquality.cryptstar.currency.presentation.detail.CryptoDetailFragment"
+        android:label="CryptoDetailFragment"
+        tools:layout="@layout/fragment_crypto_detail" >
+        <argument
+            android:name="coinItem"
+            app:argType="com.millionquality.cryptstar.network.model.CryptoMarketItem" />
+    </fragment>
 
 </navigation>

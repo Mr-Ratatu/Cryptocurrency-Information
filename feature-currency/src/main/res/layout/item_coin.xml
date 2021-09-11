@@ -7,7 +7,7 @@
 
         <variable
             name="items"
-            type="com.millionquality.cryptstar.data.CryptoMarketItem" />
+            type="com.millionquality.cryptstar.network.model.CryptoMarketItem" />
 
         <variable
             name="listener"
@@ -58,20 +58,20 @@
             tools:text="@sample/coin_symbol" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/item_coin_price"
+            android:id="@+id/detailCoinPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/red_hat_display_medium"
             android:text='@{"$\t" + String.valueOf(items.currentPrice)}'
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/item_coin_percent"
+            app:layout_constraintBottom_toTopOf="@+id/detailCoinPercent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@sample/coin_price" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/item_coin_percent"
+            android:id="@+id/detailCoinPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/red_hat_display_medium"
@@ -80,7 +80,7 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_coin_price"
+            app:layout_constraintTop_toBottomOf="@+id/detailCoinPrice"
             app:setPriceColor="@{items.priceChangePercentage}"
             tools:text="4.56968%" />
 
@@ -88,9 +88,9 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:layout_marginEnd="@dimen/indent_8"
-            app:layout_constraintBottom_toBottomOf="@+id/item_coin_percent"
-            app:layout_constraintEnd_toStartOf="@+id/item_coin_percent"
-            app:layout_constraintTop_toTopOf="@+id/item_coin_percent"
+            app:layout_constraintBottom_toBottomOf="@+id/detailCoinPercent"
+            app:layout_constraintEnd_toStartOf="@+id/detailCoinPercent"
+            app:layout_constraintTop_toTopOf="@+id/detailCoinPercent"
             app:setArrowImg="@{items.priceChangePercentage}"
             tools:src="@drawable/ic_arrow_negative" />
 

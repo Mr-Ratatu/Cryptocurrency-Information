@@ -19,7 +19,6 @@ dependencies {
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
     implementation(Dependencies.material)
-
     implementation(Dependencies.lifecycle)
 
     //Kotlin Coroutines
@@ -27,6 +26,6 @@ dependencies {
     implementation(Dependencies.coroutinesCore)
     implementation(Dependencies.lifecycleRuntime)
 
-    // Coil
+    // UI
     implementation(Dependencies.coil)
 }

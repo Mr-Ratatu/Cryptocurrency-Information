@@ -40,11 +40,10 @@ android {
 dependencies {
 
     implementation project(Projects.base)
-    implementation project(Projects.core_data)
     implementation project(Projects.core_data_local)
     implementation project(Projects.core_data_network)
     implementation project(Projects.feature_currency)
-    implementation project(Projects.feature_main)
+    implementation project(Projects.feature_home)
 
     // Base
     implementation(Dependencies.kotlin)
@@ -59,6 +58,7 @@ dependencies {
     implementation(Dependencies.retrofitGson)
     implementation(Dependencies.loggingInterceptor)
 
+    // DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerHiltCompiler)
 

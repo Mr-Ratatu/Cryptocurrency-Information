@@ -14,4 +14,12 @@
         <item name="android:fontFamily">@font/red_hat_display_regular</item>
     </style>
 
+    <style name="ChipTimeSpanStyle" parent="Widget.MaterialComponents.Chip.Filter" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text_chip</item>
+        <item name="checkedIcon">@null</item>
+        <item name="chipBackgroundColor">@color/color_background_chip</item>
+    </style>
+
 </resources>

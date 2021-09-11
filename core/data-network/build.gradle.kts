@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("dagger.hilt.android.plugin")
+    id("kotlin-parcelize")
     kotlin("android")
     kotlin("kapt")
 }
@@ -47,14 +48,12 @@ android {
 
 dependencies {
 
-    implementation(project(Projects.core_data))
-
-    // Retrofit
+    // Network
     implementation(Dependencies.retrofit)
     implementation(Dependencies.retrofitGson)
     implementation(Dependencies.loggingInterceptor)
 
-    // Dagger Hilt
+    // DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerHiltCompiler)
 }

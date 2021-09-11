@@ -12,7 +12,7 @@ import com.millionquality.cryptstar.currency.R
 class FilterDialogFragment : BottomSheetDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return BottomSheetDialog(requireContext(), R.style.MyTransparentBottomSheetDialogTheme)
+        return BottomSheetDialog(requireContext(), R.style.BottomSheetDialog)
     }
 
     override fun onCreateView(

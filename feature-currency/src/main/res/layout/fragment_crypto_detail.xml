@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="items"
+            type="com.millionquality.cryptstar.network.model.CryptoMarketItem" />
+
+        <variable
+            name="marketViewState"
+            type="com.millionquality.cryptstar.currency.utils.MarketViewState" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/detailToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_back">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/red_hat_display_bold"
+                android:text="@{items.name}"
+                android:textColor="@color/black"
+                tools:text="Bitcoin" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coinInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/indent_18"
+            app:layout_constraintTop_toBottomOf="@+id/detailToolbar">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/detailSymbolCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/red_hat_display_regular"
+                android:text="@{items.symbol}"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_18"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textAllCaps="true"
+                tools:text="@sample/coin_symbol" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/detailCoinPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_8"
+                android:fontFamily="@font/red_hat_display_medium"
+                android:text='@{"$\t" + String.valueOf(items.currentPrice)}'
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailSymbolCoin"
+                tools:text="@sample/coin_price" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/detailCoinPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/red_hat_display_medium"
+                android:text="@{String.valueOf(items.priceChangePercentage) + '%'}"
+                android:textColor="@color/negative"
+                android:textSize="@dimen/text_18"
+                app:layout_constraintBottom_toBottomOf="@+id/detailCoinPrice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/detailCoinPrice"
+                app:setPriceColor="@{items.priceChangePercentage}"
+                tools:text="4.56968%" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="@dimen/indent_8"
+                app:layout_constraintBottom_toBottomOf="@+id/detailCoinPercent"
+                app:layout_constraintEnd_toStartOf="@+id/detailCoinPercent"
+                app:layout_constraintTop_toTopOf="@+id/detailCoinPercent"
+                app:setArrowImg="@{items.priceChangePercentage}"
+                tools:src="@drawable/ic_arrow_negative" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/detailLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_color"
+            android:minHeight="300dp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coinInfoLayout"
+            app:setLineDataSet="@{marketViewState.getLineDataSet(context)}" />
+
+        <ProgressBar
+            android:id="@+id/detailChartLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/detailLineChart"
+            app:layout_constraintEnd_toEndOf="@+id/detailLineChart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coinInfoLayout" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_one_day"
+            style="@style/ChipTimeSpanStyle"
+            android:layout_marginTop="@dimen/indent_16"
+            android:checked="@{marketViewState.chip1dChecked}"
+            android:text="@string/one_day"
+            app:layout_constraintEnd_toStartOf="@+id/detail_time_span_seven_days"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailLineChart"
+            tools:checked="true" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_seven_days"
+            style="@style/ChipTimeSpanStyle"
+            android:checked="@{marketViewState.chip7dChecked}"
+            android:text="@string/seven_days"
+            app:layout_constraintEnd_toStartOf="@+id/detail_time_span_thirty_days"
+            app:layout_constraintStart_toEndOf="@+id/detail_time_span_one_day"
+            app:layout_constraintTop_toTopOf="@+id/detail_time_span_one_day" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_thirty_days"
+            style="@style/ChipTimeSpanStyle"
+            android:checked="@{marketViewState.chip30dChecked}"
+            android:text="@string/thirty_days"
+            app:layout_constraintEnd_toStartOf="@+id/detail_time_span_sixty_days"
+            app:layout_constraintStart_toEndOf="@+id/detail_time_span_seven_days"
+            app:layout_constraintTop_toTopOf="@+id/detail_time_span_seven_days" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_sixty_days"
+            style="@style/ChipTimeSpanStyle"
+            android:checked="@{marketViewState.chip60dChecked}"
+            android:text="@string/sixty_days"
+            app:layout_constraintEnd_toStartOf="@+id/detail_time_span_ninety_days"
+            app:layout_constraintStart_toEndOf="@+id/detail_time_span_thirty_days"
+            app:layout_constraintTop_toTopOf="@+id/detail_time_span_thirty_days" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_ninety_days"
+            style="@style/ChipTimeSpanStyle"
+            android:checked="@{marketViewState.chip90dChecked}"
+            android:text="@string/ninety_days"
+            app:layout_constraintEnd_toStartOf="@+id/detail_time_span_one_year"
+            app:layout_constraintStart_toEndOf="@+id/detail_time_span_sixty_days"
+            app:layout_constraintTop_toTopOf="@+id/detail_time_span_sixty_days" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/detail_time_span_one_year"
+            style="@style/ChipTimeSpanStyle"
+            android:checked="@{marketViewState.chip1yChecked}"
+            android:text="@string/one_year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/detail_time_span_ninety_days"
+            app:layout_constraintTop_toTopOf="@+id/detail_time_span_ninety_days" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -46,4 +46,6 @@ object Dependencies {
     const val lifecycleExt = "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycleExtensionVersion}"
     const val lifecycle = "androidx.lifecycle:lifecycle-common-java8:${Versions.lifecycleVersion}"
     const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleVersion}"
+    const val shimmerEffect = "com.facebook.shimmer:shimmer:${Versions.shimmerEffectVersion}"
+    const val mpAndroidChart = "com.github.PhilJay:MPAndroidChart:${Versions.mpAndroidChartVersion}"
 }

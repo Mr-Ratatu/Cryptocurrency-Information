@@ -18,15 +18,18 @@ dependencies {
 
     implementation(project(Projects.base))
 
+    // Base
     implementation(Dependencies.kotlin)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
     implementation(Dependencies.material)
     implementation(Dependencies.constraintLayout)
 
+    // DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerHiltCompiler)
 
+    // Navigation
     implementation(Dependencies.navigationFragment)
     implementation(Dependencies.navigationUI)
 }

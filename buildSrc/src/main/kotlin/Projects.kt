@@ -7,7 +7,7 @@ object Projects {
     const val core_data_local = ":core:data-local"
     const val core_data_network = ":core:data-network"
 
-    const val feature_main = ":feature-main"
+    const val feature_home = ":feature-home"
     const val feature_converter = ":feature-converter"
     const val feature_currency = ":feature-currency"
     const val feature_favorite = ":feature-favorite"

@@ -26,4 +26,6 @@ object Versions {
     const val coilVersion = "1.2.1"
     const val androidArchCoreTest = "2.1.0"
     const val coroutinesVersion = "1.4.3"
+    const val shimmerEffectVersion = "0.5.0"
+    const val mpAndroidChartVersion = "3.1.0"
 }

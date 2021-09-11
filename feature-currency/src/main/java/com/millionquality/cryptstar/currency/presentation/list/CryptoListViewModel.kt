@@ -6,7 +6,7 @@ import com.millionquality.cryptstar.base.data.State
 import com.millionquality.cryptstar.base.extension.doOnError
 import com.millionquality.cryptstar.base.extension.doOnLoading
 import com.millionquality.cryptstar.base.extension.doOnSuccess
-import com.millionquality.cryptstar.data.CryptoMarketItem
+import com.millionquality.cryptstar.network.model.CryptoMarketItem
 import com.millionquality.cryptstar.currency.domain.use_case.CryptoListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*

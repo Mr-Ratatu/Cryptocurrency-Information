@@ -56,9 +56,9 @@ kapt {
 dependencies {
 
     implementation(project(Projects.base))
-    implementation(project(Projects.core_data))
     implementation(project(Projects.core_data_network))
 
+    // Base
     implementation(Dependencies.kotlin)
     implementation(Dependencies.coreKtx)
     implementation(Dependencies.appCompat)
@@ -66,9 +66,15 @@ dependencies {
     implementation(Dependencies.constraintLayout)
     implementation(Dependencies.swipeRefreshLayout)
 
+    // DI
     implementation(Dependencies.daggerHilt)
     kapt(Dependencies.daggerHiltCompiler)
 
+    // Navigation
     implementation(Dependencies.navigationFragment)
     implementation(Dependencies.navigationUI)
+
+    // UI
+    implementation(Dependencies.shimmerEffect)
+    implementation(Dependencies.mpAndroidChart)
 }

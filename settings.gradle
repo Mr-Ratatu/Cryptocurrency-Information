@@ -3,16 +3,16 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
         jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "Millions of crypts"
 include ':app'
 include ':base'
-include ':core:data'
 include ':core:data-local'
 include ':core:data-network'
 include ':feature-currency'
 include ':feature-converter'
 include ':feature-favorite'
-include ':feature-main'
+include ':feature-home'

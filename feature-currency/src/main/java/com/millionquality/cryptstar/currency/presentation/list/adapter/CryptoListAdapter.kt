@@ -2,7 +2,7 @@ package com.millionquality.cryptstar.currency.presentation.list.adapter
 
 import com.millionquality.cryptstar.base.ui.adapter.BaseAdapter
 import com.millionquality.cryptstar.base.ui.adapter.DiffUtils
-import com.millionquality.cryptstar.data.CryptoMarketItem
+import com.millionquality.cryptstar.network.model.CryptoMarketItem
 import com.millionquality.cryptstar.currency.R
 
 class CryptoListAdapter(
